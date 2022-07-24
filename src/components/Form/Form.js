@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import s from './Form.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import * as contactsOperations from '../../redux/contacts/contacts-operations';
-import { contactsSelectors } from 'redux/contacts';
-import showAlert from 'redux/helpers';
+import { useSelector } from 'react-redux';
 
-export default function Form() {
+import { contactsSelectors } from 'redux/contacts';
+// import showAlert from 'redux/helpers';
+
+export default function Form({ showAlert, dispatchSaveContact }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const dispatch = useDispatch();
+
   const contacts = useSelector(contactsSelectors.getAllContacts);
 
   const saveContact = () => {
@@ -20,7 +20,8 @@ export default function Form() {
       showAlert(name);
       return;
     }
-    dispatch(contactsOperations.saveContact({ name, number }));
+
+    dispatchSaveContact(name, number);
   };
 
   const handelInputChange = event => {
