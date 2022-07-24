@@ -10,19 +10,19 @@ export default function AddContact() {
   const [message, setMessage] = useState(false);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(contactsOperations.fetchContacts());
-  // }, [dispatch]);
-
-  // const contacts = useSelector(contactsSelectors.getAllContacts);
-  // const isLoading = useSelector(contactsSelectors.getStateLoading);
-  // const isError = useSelector(contactsSelectors.getStateError);
   const showAlert = name => {
     setMessage(`${name} is already in contacts`);
     setTimeout(() => setMessage(false), 3000);
   };
   const saveContact = (name, number) => {
-    dispatch(contactsOperations.saveContact({ name, number }));
+    dispatch(contactsOperations.saveContact({ name, number })).then(
+      response => {
+        const newName = response.payload.name;
+
+        setMessage(`${newName} has been added to your contacts`);
+        setTimeout(() => setMessage(false), 3000);
+      }
+    );
   };
 
   return (
