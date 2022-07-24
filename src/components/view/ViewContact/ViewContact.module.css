@@ -4,9 +4,9 @@
   background-position: center;
   background-position: center;
   max-width: 1440px;
-  height: 600px;
+  height: 100vh;
   padding-top: 100px;
-  padding-bottom: 200px;
+  padding-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

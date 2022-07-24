@@ -19,6 +19,7 @@ export default function ViewContact() {
   const contacts = useSelector(contactsSelectors.getAllContacts);
   const isLoading = useSelector(contactsSelectors.getStateLoading);
   const isError = useSelector(contactsSelectors.getStateError);
+
   return (
     <div className={s.formPage}>
       <div>
@@ -27,13 +28,7 @@ export default function ViewContact() {
         </button>
         <h1 className={s.title}>View Contact</h1>
         <div className={s.massage}>
-          {/* {isNameEmpty && <p>Enter your name</p>}
-          {isEmailEmpty && <p>Enter your email</p>}
-          {isPasswordEmpty && <p>Enter your password</p>}
-          {!isPasswordValid && (
-            <p>Minimum allowed password length is 8 characters</p>
-          )}
-          {isError && errorMessage !== '' && <p>{errorMessage}</p>} */}
+          {contacts.length === 0 && <p>No contacts saved yet</p>}
           {isError && <p>{isError.message}</p>}
         </div>
       </div>
