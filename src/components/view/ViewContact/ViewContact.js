@@ -48,7 +48,7 @@ export default function ViewContact() {
             <ThreeDots
               height="100"
               width="100"
-              color="red"
+              color="#3c020b"
               ariaLabel="loading"
             />
           </div>
