@@ -5,8 +5,8 @@
   background-position: center;
   max-width: 1440px;
   height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 30px;
+  /* padding-top: 100px;
+  padding-bottom: 30px; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -17,9 +17,8 @@
   font-size: 100px;
   color: #3c020b;
   font-weight: 700;
-  margin-right: 10vw;
 }
-
+/* 
 .form {
   display: flex;
   flex-direction: column;
@@ -68,7 +67,7 @@
 
 input:focus-within {
   border-bottom: 1px solid rgb(180, 47, 7);
-}
+} */
 
 .button {
   width: 320px;
@@ -100,5 +99,5 @@ input:focus-within {
   max-width: 300px;
 }
 .wrapper {
-  min-height: 400px;
+  min-height: 600px;
 }

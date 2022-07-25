@@ -1,3 +1,8 @@
+.contactsWrapper {
+  padding: 0;
+  padding-right: 30px;
+}
+
 .contactsList {
   display: flex;
   flex-direction: column;

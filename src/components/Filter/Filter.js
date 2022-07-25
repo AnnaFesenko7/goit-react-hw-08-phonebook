@@ -10,8 +10,8 @@ export default function Filter() {
   const dispatch = useDispatch();
 
   return (
-    <div className={s.form}>
-      <label className={s.label} htmlFor={loginInputId} />
+    // <div className={s.form}>
+    <label className={s.label} htmlFor={loginInputId}>
       Find contact by name:
       <input
         id={loginInputId}
@@ -20,16 +20,7 @@ export default function Filter() {
         value={filter}
         onChange={e => dispatch(contactsActions.changeFilter(e.target.value))}
       />
-    </div>
+    </label>
+    // </div>
   );
 }
-
-// const mapStateToProps = state => ({
-//   filter: state.filter,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   onChange: e => dispatch(contactsActions.changeFilter(e.target.value)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Filter);
